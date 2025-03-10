@@ -7,7 +7,7 @@ int main ()
 {
 	int n,m;
 	cin>>n>>m;
-	int a[n],b[m];
+	vector < int > a(n),b(m);
 	int cnt[100001]={0};
 	for ( int i = 0; i < n; ++i)
 	{

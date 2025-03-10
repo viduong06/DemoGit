@@ -33,17 +33,6 @@ int main()
         }
         countMap[a[i]]=0;
     }
-    multimap<ll,int > deleteMap;
-    deleteMap.insert({3,5});
-    deleteMap.insert({3,5});
-    deleteMap.insert({3,5});
-    auto itz= deleteMap.find(3);
-    deleteMap.erase(itz);
-
-    for ( auto it : deleteMap)
-    {
-        cout<<it.first<<" "<<it.second<<endl;
-    }
     
    return 0;
 
