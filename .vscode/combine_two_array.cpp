@@ -26,7 +26,7 @@ int main ()
 			cnt[b[i]]=1;
 		}
 	}
-    for ( int i = 0; i < 100000; i++)
+    for ( int i = 0; i < m + n; i++)
     {
     	if ( cnt[i]!=0)
            cout<<i<<" ";
