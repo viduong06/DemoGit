@@ -4,9 +4,10 @@ int firstN( int a[], int n, int x)
 {
     int left=0;
     int right = n-1;
+    int res=-1;
     while( left <= right)
     { 
-        int mid = (left + right)/2;
+        int mid = left+(right - left)/2;
         if(a[mid] < x)
         {
             left= mid + 1;
@@ -17,10 +18,11 @@ int firstN( int a[], int n, int x)
         }
         else 
         {
-            return mid;
+            right = mid - 1; 
+            res=mid;
         } 
     }
-    return -1;
+    return res;
 }
 int lastN( int a[], int n, int x)
 {
@@ -29,7 +31,7 @@ int lastN( int a[], int n, int x)
     int res=-1;
     while( left <= right)
     { 
-        int mid = (left + right)/2;
+        int mid = left+(right - left)/2;
         if(a[mid] < x)
         {
             left= mid + 1;
@@ -46,14 +48,14 @@ int lastN( int a[], int n, int x)
     }
     return res;
 }
-int upperN( int a[], int n, int x)
+int lowerBound( int a[], int n, int x)
 {
     int left=0;
     int right = n-1;
     int res=-1;
     while( left <= right)
     { 
-        int mid = (left + right)/2;
+        int mid = left+(right - left)/2;
         if(a[mid] < x)
         {
             left= mid + 1;
@@ -66,15 +68,15 @@ int upperN( int a[], int n, int x)
     }
     return res;
 }
-int upperN2( int a[], int n, int x)
+int upperBound( int a[], int n, int x)
 {
     int left=0;
     int right = n-1;
     int res=-1;
     while( left <= right)
     { 
-        int mid = (left + right)/2;
-        if(a[mid] < x)
+        int mid = left+(right - left)/2;
+        if(a[mid] <= x)
         {
             left= mid + 1;
         }
@@ -97,10 +99,16 @@ int main()
     }
     int x;
     cin>>x;
-    cout<<firstN(a,n,x)<<endl;
-    cout<<lastN(a,n,x)<<endl;
-    cout<<upperN(a,n,x)<<endl;
-    cout<<upperN2(a,n,x)<<endl;
-    int frequency= lastN(a,n,x)-firstN(a,n,x);
-    cout<<frequency<<endl;
+    cout<<"first index found x: "<<firstN(a,n,x)<<endl;
+    cout<<"last index found x: "<<lastN(a,n,x)<<endl;
+    cout<<"first index found num >= x: "<<lowerBound(a,n,x)<<endl;
+    cout<<"first index found num > x: "<<upperBound(a,n,x)<<endl;
+    int frequency= lastN(a,n,x)-firstN(a,n,x)+1;
+    if( frequency == 0)
+    {
+        cout<<"-1";
+    }
+    else {
+        cout<<"appearance frequency: "<<frequency;
+    }
 }
