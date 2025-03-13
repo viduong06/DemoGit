@@ -1,0 +1,1 @@
+{"name":"Local: sortTest","url":"c:\\Users\\quochuy\\Documents\\Code\\.vscode\\sortTest.cpp","tests":[{"id":1741652662661,"input":"6\n111 9 23 1 5 100","output":"1 100 111 23 5 9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\quochuy\\Documents\\Code\\.vscode\\sortTest.cpp","group":"local","local":true}

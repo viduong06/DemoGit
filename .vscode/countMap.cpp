@@ -5,11 +5,11 @@ using namespace std;
 using ll= long long;
 int main()
 {
-    //map.erase():logN
+    // map.erase():logN
     // map.find():logN
     // map.insert:logN
     // map.begin, map.end()
-    //count():logN
+    // count():logN
     // multimap
     // unordered_map:O(1)=>O(n)
     // sort(khai bao algorithm): NlogN ( <=10^6) syntax : 1: doi voi mang 1 chieu xet tu x toi y : sort(a+x, a+y+1) 
